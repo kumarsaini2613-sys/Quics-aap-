@@ -1,0 +1,1 @@
+const CACHE='powertech-quiz-v1';const FILES=['./','./index.html','./manifest.webmanifest','./relay.jpg'];self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES.filter(x=>x!=='./relay.jpg'||true)))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
